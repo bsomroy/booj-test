@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Downtown San Diego Real Estate Office</title>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/willis-allen-icons.css" rel="stylesheet">
@@ -17,7 +18,7 @@
         <div id="navContainer">
             <div class="container headerPadding">
                 <div class="row">
-                    <div class="col-lg-5 xsTextCenter clearfix">
+                    <div class="col-lg-5 margin-bottom-10 md-margin-bottom-0 xsTextCenter clearfix">
                         <a href="/" title="Willis Allen Real Estate Home"><img class="header-logo sm-pull-left" src="images/willis-allen-christies-1x.png" alt="Willis Allen Real Estate" srcset="images/willis-allen-christies-1.5x.png 1.5x, images/willis-allen-christies-2x.png 2x, images/willis-allen-christies-3x.png 3x, images/willis-allen-christies-4x.png 4x"></a>
                         <div class="hidden-lg sm-margin-top-20 md-margin-top-5">
                             <div class="contact-card pull-right hidden-xs hidden-sm">
@@ -79,20 +80,6 @@
                                 <div class="acccount-user-block visible-xs text-center margin-bottom-10">
                                     <a href="/account/" data-action="account-login" title="Sign In">Sign In</a>
                                 </div>
-                                <div class="visible-sm">
-                                    <div class="dropdown header-compare-toggle compare-bin-wrapper hidden margin-bottom-20 disabled" style="display: block;">
-                                        <a href="#" class="dropdown-toggle" title="Compare" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
-                                                Compare
-                                                <span class="property-compare-count">(0)</span>
-                                            </a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a class="cursor" role="button" tabindex="0" data-compare-action="compare">Compare Properties</a></li>
-                                            <li><a class="cursor" role="button" tabindex="0" data-compare-action="tour">View Driving Tour</a></li>
-                                            <li><a class="cursor" role="button" tabindex="0" data-action="account-login">Save All To Account</a></li>
-                                            <li><a class="cursor" role="button" tabindex="0" data-compare-action="empty">Remove All From Compare</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
                             <!-- /.navbar-collapse -->
                         </nav>
@@ -100,30 +87,50 @@
                 </div>
             </div>
         </div>
-        <!-- <div id="quick-search-bg">
-        <div class="container row row-wrap space-between content-padding">
-                <div id="search-container" class="row">
-                    <div id="searchbox">
-                        <input type="text" value="" placeholder="Address, City, ZIP or MLS#" name="AddressAndLoc" id="form">
-                    </div>
-                    <div id="searchbutton-container" class="center-v">
-                        <button type="submit" class="btn center-v">
-                            <div class="mobile-hide row">Search <i class="icon icon-chevron-right"></i></div>
-                                <i class="icon icon-search"></i>
-                        </button>
+        <div class="quick-search-component quick-search-component-content">
+            <div class="xs-bg-light-gray">
+                <div class="container">
+                    <div class="row margin-top-10 margin-bottom-10">
+                        <div class="col-sm-7 col-md-8 col-lg-5">
+                            <form action="/search/url_search/" class="margin-bottom-0">
+                                <fieldset class="clearfix">
+                                    <div class="input-group">
+                                        <input type="text" value="" placeholder="Address, City, ZIP or MLS#" name="AddressAndLoc" class="form-control">
+                                        <div class="input-group-btn padding-left-10">
+                                            <button type="submit" class="btn btn-default btn-sm"><span class="visible-xs"><i class="icon icon-search"></i></span><span class="hidden-xs">Search <i class="icon icon-chevron-right"></i></span></button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="col-sm-5 col-md-4 col-lg-7 text-right hidden-xs">
+                            <div class="relative margin-top-10">
+                                <a href="#" data-action="toggle-section" data-target=".qs-menu" title="Other Ways to Search" class="hidden-lg upper qs-search-link" data-show-template="Other Ways to Search <i class='icon icon-caret-down font-20'></i>" data-hide-template="Other Ways to Search <i class='icon icon-caret-up font-20'></i>">
+                            Other Ways to Search <i class="icon icon-caret-down font-20"></i>
+                        </a>
+                                <ul class="list-unstyled qs-menu" style="display: none;">
+                                    <li>
+                                        <a href="/search/view/New_Property/7" title="New Listings" class="upper">New Listings</a>
+                                    </li>
+                                    <li>
+                                        <a href="/search/view/company/on/open_house/on" title="Open Houses" class="upper">Open Houses</a>
+                                    </li>
+                                    <li>
+                                        <a href="/search/view/Property_Type/229" title="Rentals" class="upper">Rentals</a>
+                                    </li>
+                                    <li>
+                                        <a href="/map_search/" title="Map Search" class="upper">Map Search</a>
+                                    </li>
+                                    <li>
+                                        <a href="/search/" title="Advanced Search" class="upper">Advanced</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="dropdown-search" class="item-end">
-                    <ul class="row space-between">
-                        <li><a href="#">New Listings</a></li>
-                        <li><a href="#">Open Houses</a></li>
-                        <li><a href="#">Rentals</a></li>
-                        <li><a href="#">Map Search</a></li>
-                        <li><a href="#">Advanced</a></li>
-                    </ul>
-                </div>
+            </div>
         </div>
-    </div> -->
     </header>
 </body>
 
